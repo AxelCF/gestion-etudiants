@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Liste des Étudiants{% endblock %}
+{% block content %}
+<h2 class="text-2xl font-bold mb-6">Liste des étudiants</h2>
+{% if etudiants %}
+    <table class="min-w-full border-collapse bg-white shadow rounded">
+        <thead>
+            <tr class="bg-gray-100">
+                <th class="py-2 px-4 text-left">Nom</th>
+                <th class="py-2 px-4 text-left">Âge</th>
+                <th class="py-2 px-4 text-left">ID</th>
+                <th class="py-2 px-4 text-left">Moyenne</th>
+                <th class="py-2 px-4 text-left">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for etudiant in etudiants %}
+            <tr>
+                <td class="py-2 px-4">{{ etudiant.nom }}</td>
+                <td class="py-2 px-4">{{ etudiant.age }}</td>
+                <td class="py-2 px-4">{{ etudiant.id }}</td>
+                <td class="py-2 px-4">{{ etudiant.moyenne if etudiant.moyenne != 0 else 'Aucune Note' }}</td>
+                <td class="py-2 px-4">
+                    <a href="{{ url_for('details_etudiant', id=etudiant.id) }}" class="text-blue-600 hover:text-blue-800">Détails</a> |
+                    <a href="{{ url_for('modifier_etudiant', id=etudiant.id) }}" class="text-yellow-600 hover:text-yellow-800">Modifier</a> |
+                    <a href="{{ url_for('supprimer_etudiant', id=etudiant.id) }}" class="text-red-600 hover:text-red-800">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p class="text-gray-500">Aucun étudiant trouvé.</p>
+{% endif %}
+<a href="{{ url_for('index') }}" class="mt-4 inline-block bg-gray-500 text-white px-6 py-3 rounded shadow hover:bg-gray-600">Retour à l'accueil</a>
+{% endblock %}
