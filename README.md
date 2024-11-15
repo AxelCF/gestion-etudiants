@@ -38,7 +38,7 @@ pip install -r requirements.txt
 
 
 
-Lancer l'application
+## Lancer l'application
 
 1. Lancer le serveur Flask :
 
@@ -67,7 +67,7 @@ gestion-etudiants/
 └── requirements.txt      # Liste des dépendances Python
 
 
-Fonctionnement
+## Fonctionnement
 
 Ajouter un étudiant
 
