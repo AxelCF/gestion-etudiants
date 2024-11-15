@@ -47,26 +47,6 @@ python app.py
 Accédez à l'application dans votre navigateur à l'adresse : http://127.0.0.1:5000/.
 
 
-
-Structure du projet
-
-gestion-etudiants/
-│
-├── app.py                # Code backend Flask
-├── templates/            # Templates HTML
-│   ├── base.html         # Template de base (avec le header et footer communs)
-│   ├── index.html        # Page d'accueil
-│   ├── ajouter.html      # Formulaire pour ajouter un étudiant
-│   ├── etudiants.html    # Liste des étudiants
-│   ├── details.html      # Détails d'un étudiant
-│   └── modifier.html     # Formulaire pour modifier un étudiant
-│
-├── static/               # Fichiers statiques (CSS, JS)
-│   └── tailwind.css      # Fichier CSS généré par Tailwind ou utilisé via CDN
-│
-└── requirements.txt      # Liste des dépendances Python
-
-
 ## Fonctionnement
 
 Ajouter un étudiant
